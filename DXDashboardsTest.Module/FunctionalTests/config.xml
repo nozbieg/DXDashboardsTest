@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3" EnableUpperCase="DXDashboardsTest.Web">
+	<Applications>
+		<!-- Web -->
+		<Application
+			Name="DXDashboardsTestWeb"
+			UseIISExpress="True"
+			Url="http://localhost:4030"
+			PhysicalPath="[WebAppBin]"
+			AdapterAssemblyName="[WebAdapterAssemblyName]"
+			IgnoreCase="true"/>
+		<!-- For IIS -->
+		<!--Application
+			Name="DXDashboardsTestWeb"
+			Url="http://localhost/DXDashboardsTest.Web/Default.aspx"
+			AdapterAssemblyName="[WebAdapterAssemblyName]"
+			IgnoreCase="true"/-->
+	</Applications>
+	<TestDatabases>
+		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="DXDashboardsTestEasyTest"/>
+	</TestDatabases>
+
+	<Aliases>
+		<Alias Name="DomainUserName" Value="%USERDOMAIN%\%USERNAME%" />
+		<Alias Name="WebAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WebAdapter.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+		<Alias Name="WebAppBin" Value="[ConfigPath]\..\..\DXDashboardsTest.Web" />
+	</Aliases>
+</Options>
